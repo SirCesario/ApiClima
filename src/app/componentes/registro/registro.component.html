@@ -5,25 +5,29 @@
         <form [formGroup]="formulario"(ngSubmit)="consultar()">
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Ciudad</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="ciudad">
+            <input type="ciudad" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="ciudad">
             <p class="text-danger" *ngIf="formulario.get('ciudad')?.invalid && formulario.get('ciudad')?.touched">Ingrese una CIudad valido</p>
             </div>
             <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Codigo Ciudad</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="codigo">
+            <input type="cod" class="form-control" id="exampleInputPassword1" formControlName="codigo">
             <p class="text-danger" *ngIf="formulario.get('codigo')?.invalid && formulario.get('codigo')?.touched">Ingrese un Codigo Valido</p>
             </div>
             <button type="submit" class="btn btn-primary">Consultar</button>
         </form>
+        <p class="text-danger" *ngIf="showError"> {{mensajeError}} </p>
     </div>
-
+    
     <div class="col-lg-6 alineacion">
         <div class="card">
             <div class="card-body">              
               <ul>
-                <li>Ciudad</li>
-                <li>codigio Ciudad</li>
-                <li>Temperatura Promedio</li>
+                <li>Descripción: {{descripcion }}</li>
+                <li>Temperatura: {{temperatura}}</li>
+                <li>Humedad: {{humedad}} </li>
+                <li>Ciudad: {{name}}</li>
+                <li>Latitud: {{latitud}}</li>
+                <li>Longitud: {{longitud}}</li>
               </ul>
             </div>
           </div>
